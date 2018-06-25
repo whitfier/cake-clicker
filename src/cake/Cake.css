@@ -1,0 +1,8 @@
+.Cake {
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.Cake:hover {
+  transform: scale(1.025, 1.025);
+}

@@ -1,26 +1,56 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import { view } from "react-easy-state";
 import { storage } from "react-easy-params";
 import cake from "./cake.png";
+import "./Cake.css";
 
 storage.count = storage.count || 0;
 
-class Cake extends PureComponent {
+class Cake extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      width: 500,
+      height: 500
+    };
+
+    this.onMouseDown = this.onMouseDown.bind(this);
+    this.onMouseUp = this.onMouseUp.bind(this);
+  }
+
   onClick() {
     storage.count++;
+  }
+
+  onMouseDown() {
+    this.setState({
+      width: 475,
+      height: 475
+    });
+  }
+
+  onMouseUp() {
+    this.setState({
+      width: 500,
+      height: 500
+    });
   }
 
   render() {
     return (
       <div>
+        <div>You've clicked {storage.count} times</div>
         <img
+          className="Cake"
           src={cake}
           alt="cake"
           onClick={this.onClick}
-          width="500"
-          height="500"
+          width={this.state.width}
+          height={this.state.height}
+          onMouseDown={this.onMouseDown}
+          onMouseUp={this.onMouseUp}
         />
-        <div>You've clicked {storage.count} times</div>
       </div>
     );
   }
