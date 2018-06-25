@@ -1,22 +1,28 @@
 import React, { PureComponent } from "react";
+import { store, view } from "react-easy-state";
 import cake from "./cake.png";
+
+const count = store({ value: 0 });
 
 class Cake extends PureComponent {
   onClick() {
-    alert("You clicked the cake!");
+    count.value++;
   }
 
   render() {
     return (
-      <img
-        src={cake}
-        alt="cake"
-        onClick={this.onClick}
-        width="300"
-        height="400"
-      />
+      <div>
+        <img
+          src={cake}
+          alt="cake"
+          onClick={this.onClick}
+          width="300"
+          height="400"
+        />
+        <div>You've clicked {count.value} times</div>
+      </div>
     );
   }
 }
 
-export default Cake;
+export default view(Cake);
