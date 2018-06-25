@@ -40,7 +40,7 @@ class Cake extends Component {
   render() {
     return (
       <div>
-        <div>You've clicked {storage.count} times</div>
+        <div>You have {storage.count} slices of cake</div>
         <img
           className="Cake"
           src={cake}
