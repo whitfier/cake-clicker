@@ -1,12 +1,13 @@
 import React, { PureComponent } from "react";
-import { store, view } from "react-easy-state";
+import { view } from "react-easy-state";
+import { storage } from "react-easy-params";
 import cake from "./cake.png";
 
-const count = store({ value: 0 });
+storage.count = storage.count || 0;
 
 class Cake extends PureComponent {
   onClick() {
-    count.value++;
+    storage.count++;
   }
 
   render() {
@@ -16,10 +17,10 @@ class Cake extends PureComponent {
           src={cake}
           alt="cake"
           onClick={this.onClick}
-          width="300"
-          height="400"
+          width="500"
+          height="500"
         />
-        <div>You've clicked {count.value} times</div>
+        <div>You've clicked {storage.count} times</div>
       </div>
     );
   }
