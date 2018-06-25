@@ -1,0 +1,29 @@
+{
+  "name": "cake-clicker",
+  "homepage": "https://whitfier.github.io/cake-clicker",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "gh-pages": "^1.2.0",
+    "husky": "^0.14.3",
+    "prettier": "^1.13.5",
+    "pretty-quick": "^1.6.0",
+    "react-scripts": "^1.1.4"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && cp build/index.html build/404.html",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "precommit": "pretty-quick --staged",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  }
+}
