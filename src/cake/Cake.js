@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { view } from "react-easy-state";
 import { storage } from "react-easy-params";
-import cake from "./cake.png";
+import cakeImage from "./cake.png";
 import "./Cake.css";
 
 storage.count = storage.count || 0;
@@ -39,11 +39,10 @@ class Cake extends Component {
 
   render() {
     return (
-      <div>
-        <div>You have {storage.count} slices of cake</div>
+      <div className="Cake">
         <img
-          className="Cake"
-          src={cake}
+          className="Cake-img"
+          src={cakeImage}
           alt="cake"
           onClick={this.onClick}
           width={this.state.width}

@@ -1,0 +1,11 @@
+.UpgradeList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.UpgradeList > button {
+  width: 50%;
+  margin: 10px;
+}

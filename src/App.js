@@ -1,15 +1,21 @@
 import React, { Component } from "react";
-import "./App.css";
+import UpgradeList from "./upgrades/UpgradeList";
+import Counter from "./counter/Counter";
 import Cake from "./cake/Cake";
-import Fork from "./upgrades/Fork";
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Fork />
-        <Cake />
-        <div className="App-footer">V6. Code by Ryan. Art by RJ.</div>
+        <div className="App-header">
+          <Counter />
+        </div>
+        <div className="App-body">
+          <Cake />
+          <UpgradeList />
+        </div>
+        <div className="App-footer">V7. Code by Ryan. Art by RJ.</div>
       </div>
     );
   }

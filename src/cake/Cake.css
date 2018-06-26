@@ -1,8 +1,14 @@
 .Cake {
+  width: 525px;
+  height: 525px;
+  order: -1;
+}
+
+.Cake-img {
   transition: 0.3s ease;
   cursor: url(fork.png), pointer;
 }
 
-.Cake:hover {
+.Cake-img:hover {
   transform: scale(1.025, 1.025);
 }

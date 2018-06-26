@@ -19,14 +19,10 @@ class Fork extends Component {
     }
   }
 
-  componentDidMount() {
-    setInterval(() => (storage.count += storage.forkCount), 1000);
-  }
-
   render() {
     return (
       <button onClick={this.onClick}>
-        <div>Buy a fork</div>
+        <h2>Buy a fork</h2>
         <div>Cost: {storage.forkCost}</div>
         <div>Total: {storage.forkCount}</div>
       </button>
