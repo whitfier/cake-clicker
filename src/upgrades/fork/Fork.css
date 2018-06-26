@@ -1,0 +1,14 @@
+.Fork {
+  display: flex;
+  flex-direction: row;
+}
+
+.Fork-info {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.Fork-info > div {
+  width: 100%;
+}

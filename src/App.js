@@ -15,7 +15,7 @@ class App extends Component {
           <Cake />
           <UpgradeList />
         </div>
-        <div className="App-footer">V7. Code by Ryan. Art by RJ.</div>
+        <div className="App-footer">V8. Code by Ryan. Art by RJ.</div>
       </div>
     );
   }

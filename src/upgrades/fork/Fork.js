@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { view } from "react-easy-state";
 import { storage } from "react-easy-params";
+import "./Fork.css";
 
 const FORK_BASE_COST = 10;
+const FORK_BASE_CPS = 1;
 
 storage.count = storage.count || 0;
 storage.forkCount = storage.forkCount || 0;
@@ -21,10 +23,14 @@ class Fork extends Component {
 
   render() {
     return (
-      <button onClick={this.onClick}>
+      <button onClick={this.onClick} className="Fork">
         <h2>Buy a fork</h2>
-        <div>Cost: {storage.forkCost}</div>
-        <div>Total: {storage.forkCount}</div>
+        <div className="Fork-info">
+          <div>Cost: {storage.forkCost}</div>
+          <div>CPS: {FORK_BASE_CPS}</div>
+          <div>Total: {storage.forkCount}</div>
+          <div>Total CPS: {storage.forkCount * FORK_BASE_CPS}</div>
+        </div>
       </button>
     );
   }
