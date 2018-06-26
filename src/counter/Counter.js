@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import { view } from "react-easy-state";
 import { storage } from "react-easy-params";
 import "./Counter.css";
@@ -8,7 +8,7 @@ storage.totalCount = storage.totalCount || 0;
 storage.forkCount = storage.forkCount || 0;
 storage.cakePerSecond = storage.cakePerSecond || 0;
 
-class Counter extends PureComponent {
+class Counter extends Component {
   updateCakeCounts() {
     storage.cakePerSecond = storage.forkCount;
     storage.count += storage.cakePerSecond;
