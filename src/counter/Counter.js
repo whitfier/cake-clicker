@@ -5,12 +5,15 @@ import "./Counter.css";
 
 storage.count = storage.count || 0;
 storage.totalCount = storage.totalCount || 0;
-storage.forkCount = storage.forkCount || 0;
 storage.cakePerSecond = storage.cakePerSecond || 0;
+storage.upgrades = storage.upgrades || {};
 
 class Counter extends Component {
   updateCakeCounts() {
-    storage.cakePerSecond = storage.forkCount;
+    const cps = Object.values(storage.upgrades)
+      .map(upgrade => upgrade.cps * upgrade.count)
+      .reduce((a, b) => a + b, 0);
+    storage.cakePerSecond = cps;
     storage.count += storage.cakePerSecond;
     storage.totalCount += storage.cakePerSecond;
   }
