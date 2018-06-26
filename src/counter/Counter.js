@@ -6,28 +6,37 @@ import "./Counter.css";
 storage.count = storage.count || 0;
 storage.totalCount = storage.totalCount || 0;
 storage.cakePerSecond = storage.cakePerSecond || 0;
-storage.upgrades = storage.upgrades || {};
+storage.buildings = storage.buildings || {};
+
+const counter_tickrate = 100;
 
 class Counter extends Component {
-  updateCakeCounts() {
-    const cps = Object.values(storage.upgrades)
-      .map(upgrade => upgrade.cps * upgrade.count)
+  fast_updateCakeCounts() {
+    storage.count += (counter_tickrate / 1000) * storage.cakePerSecond;
+  }
+
+  slow_updateCakeCounts() {
+    const cps = Object.values(storage.buildings)
+      .map(building => building.cps * building.count)
       .reduce((a, b) => a + b, 0);
     storage.cakePerSecond = cps;
-    storage.count += storage.cakePerSecond;
     storage.totalCount += storage.cakePerSecond;
+    Object.values(storage.buildings).map((building, index, buildings) => {
+      buildings[index].alltime += building.cps * building.count;
+    });
   }
 
   componentDidMount() {
-    setInterval(this.updateCakeCounts, 1000);
+    setInterval(this.fast_updateCakeCounts, counter_tickrate);
+    setInterval(this.slow_updateCakeCounts, 1000);
   }
 
   render() {
     return (
       <div className="Counter">
-        <div>Cakes baked: {storage.count}</div>
-        <div>Cakes baked (all time): {storage.totalCount}</div>
-        <div>Cakes per second (CPS): {storage.cakePerSecond}</div>
+        <div>Cakes baked: {storage.count.toFixed(0)}</div>
+        <div>Cakes baked (all time): {storage.totalCount.toFixed(0)}</div>
+        <div>Cakes per second (CPS): {storage.cakePerSecond.toFixed(0)}</div>
       </div>
     );
   }
