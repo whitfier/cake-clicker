@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import UpgradeList from "./upgrades/UpgradeList";
+import BuildingList from "./buildings/BuildingList";
 import Counter from "./counter/Counter";
 import Cake from "./cake/Cake";
 import "./App.css";
@@ -13,9 +13,9 @@ class App extends Component {
         </div>
         <div className="App-body">
           <Cake />
-          <UpgradeList />
+          <BuildingList />
         </div>
-        <div className="App-footer">V9. Code by Ryan. Art by RJ.</div>
+        <div className="App-footer">V10. Code by Ryan. Art by RJ.</div>
       </div>
     );
   }

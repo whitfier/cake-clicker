@@ -1,0 +1,29 @@
+.Building {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.Building-button {
+  width: 300px;
+  flex-direction: row;
+}
+
+.Building-image {
+  display: flex;
+  float: left;
+  height: "100px";
+  width: "100px";
+}
+
+.Building-name {
+  display: flex;
+  margin: 10px;
+  vertical-align: middle;
+}
+
+.Building-stats {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
