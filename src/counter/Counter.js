@@ -21,8 +21,8 @@ class Counter extends Component {
       .reduce((a, b) => a + b, 0);
     storage.cakePerSecond = cps;
     storage.totalCount += storage.cakePerSecond;
-    Object.values(storage.buildings).map((building, index, buildings) => {
-      buildings[index].alltime += building.cps * building.count;
+    Object.values(storage.buildings).forEach(building => {
+      building.alltime += building.cps * building.count;
     });
   }
 

@@ -13,7 +13,7 @@ class Building extends Component {
   }
 
   onClick() {
-    const { name, cps, baseCost, alltime } = this.props;
+    const { name, cps, baseCost } = this.props;
     const building = storage.buildings[name] || {
       cost: baseCost,
       cps: cps,
@@ -40,12 +40,12 @@ class Building extends Component {
 
     return (
       <div className="Building">
+        <div className="Building-image">
+          <img src={image} alt="" />
+        </div>
         <button onClick={this.onClick} className="Building-button">
-          <div className="Building-image">
-            <img src={image} />
-          </div>
           <div className="Building-name">
-            <h2>Buy a {name}</h2>
+            <h2>Buy {name}</h2>
           </div>
         </button>
         <div className="Building-stats">
