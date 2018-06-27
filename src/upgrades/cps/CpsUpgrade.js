@@ -26,8 +26,11 @@ class CpsUpgrade extends Component {
   render() {
     const { name, cost, cpsModifier } = this.props;
 
-    // do not display upgrade if it's already purchased or if it costs more than 10x our cake count
-    if (storage.purchasedUpgrades.includes(name) || storage.count < 0.1 * cost)
+    // do not display upgrade if it's already purchased or if it costs more than 2x our cake count
+    if (
+      storage.purchasedUpgrades.includes(name) ||
+      storage.totalCount < 0.5 * cost
+    )
       return null;
 
     return (
