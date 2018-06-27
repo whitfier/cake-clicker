@@ -38,7 +38,7 @@ class Counter extends Component {
         <div>Cakes baked: {storage.count.toFixed(0)}</div>
         <div>Cakes baked (all time): {storage.totalCount.toFixed(0)}</div>
         <div>Cakes per second (CPS): {storage.cakePerSecond.toFixed(0)}</div>
-        <div>CPS multiplier: {storage.cpsMultiplier.toFixed(0)}</div>
+        <div>CPS multiplier: {storage.cpsMultiplier.toFixed(2)}</div>
       </div>
     );
   }

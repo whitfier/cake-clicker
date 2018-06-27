@@ -17,7 +17,7 @@ class App extends Component {
           <BuildingList />
           <UpgradeList />
         </div>
-        <div className="App-footer">V10. Code by Ryan. Art by RJ.</div>
+        <div className="App-footer">V11. Code by Ryan. Art by RJ.</div>
       </div>
     );
   }
