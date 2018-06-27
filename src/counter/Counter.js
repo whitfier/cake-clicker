@@ -6,6 +6,7 @@ import "./Counter.css";
 storage.count = storage.count || 0;
 storage.totalCount = storage.totalCount || 0;
 storage.cakePerSecond = storage.cakePerSecond || 0;
+storage.cpsMultiplier = storage.cpsMultiplier || 1;
 storage.buildings = storage.buildings || {};
 
 const counter_tickrate = 100;
@@ -19,7 +20,7 @@ class Counter extends Component {
     const cps = Object.values(storage.buildings)
       .map(building => building.cps * building.count)
       .reduce((a, b) => a + b, 0);
-    storage.cakePerSecond = cps;
+    storage.cakePerSecond = cps * storage.cpsMultiplier;
     storage.totalCount += storage.cakePerSecond;
     Object.values(storage.buildings).forEach(building => {
       building.alltime += building.cps * building.count;
@@ -37,6 +38,7 @@ class Counter extends Component {
         <div>Cakes baked: {storage.count.toFixed(0)}</div>
         <div>Cakes baked (all time): {storage.totalCount.toFixed(0)}</div>
         <div>Cakes per second (CPS): {storage.cakePerSecond.toFixed(0)}</div>
+        <div>CPS multiplier: {storage.cpsMultiplier.toFixed(0)}</div>
       </div>
     );
   }

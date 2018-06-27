@@ -24,17 +24,21 @@ class BuildingList extends Component {
   }
 
   render() {
-    const buildingComponents = buildings.map(building => (
-      <Building
-        key={building.name}
-        name={building.name}
-        baseCost={building.baseCost}
-        cps={building.cps}
-        image={building.image}
-        alltime={building.alltime}
-      />
-    ));
-    return <div className="BuildingList">{buildingComponents}</div>;
+    return (
+      <div className="BuildingList">
+        <h1>Buildings</h1>
+        {buildings.map(building => (
+          <Building
+            key={building.name}
+            name={building.name}
+            baseCost={building.baseCost}
+            cps={building.cps}
+            image={building.image}
+            alltime={building.alltime}
+          />
+        ))}
+      </div>
+    );
   }
 }
 

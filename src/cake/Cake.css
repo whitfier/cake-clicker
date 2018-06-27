@@ -6,7 +6,7 @@
 
 .Cake-img {
   transition: 0.3s ease;
-  cursor: url(fork.png), pointer;
+  cursor: url(cursor.png), pointer;
 }
 
 .Cake-img:hover {

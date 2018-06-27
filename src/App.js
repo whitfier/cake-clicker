@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import BuildingList from "./buildings/BuildingList";
 import Counter from "./counter/Counter";
 import Cake from "./cake/Cake";
+import BuildingList from "./buildings/BuildingList";
+import UpgradeList from "./upgrades/UpgradeList";
 import "./App.css";
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
         <div className="App-body">
           <Cake />
           <BuildingList />
+          <UpgradeList />
         </div>
         <div className="App-footer">V10. Code by Ryan. Art by RJ.</div>
       </div>
